@@ -10,6 +10,15 @@
 		625EEEBC1F499A0400E9905C /* FieldGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625EEEB21F499A0400E9905C /* FieldGuard.framework */; };
 		625EEEC11F499A0400E9905C /* FieldGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EEEC01F499A0400E9905C /* FieldGuardTests.swift */; };
 		625EEEC31F499A0400E9905C /* FieldGuard.h in Headers */ = {isa = PBXBuildFile; fileRef = 625EEEB51F499A0400E9905C /* FieldGuard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62D79B901F53230C001EAC88 /* TextFieldDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B8F1F53230C001EAC88 /* TextFieldDescriptor.swift */; };
+		62D79B961F5323F8001EAC88 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B951F5323F8001EAC88 /* FieldValidator.swift */; };
+		62D79B981F532408001EAC88 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B971F532408001EAC88 /* ValidationRule.swift */; };
+		62D79B9A1F53241E001EAC88 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B991F53241E001EAC88 /* Errors.swift */; };
+		62D79B9E1F5334F0001EAC88 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B9D1F5334F0001EAC88 /* ValidationResult.swift */; };
+		62D79BA01F533D67001EAC88 /* RuleMakers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B9F1F533D67001EAC88 /* RuleMakers.swift */; };
+		62D79BA31F5347E3001EAC88 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79BA11F5347E3001EAC88 /* StringFormatter.swift */; };
+		62D79BA41F5347E3001EAC88 /* StringMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79BA21F5347E3001EAC88 /* StringMask.swift */; };
+		62D79BA61F534A42001EAC88 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79BA51F534A42001EAC88 /* String+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +38,15 @@
 		625EEEBB1F499A0400E9905C /* FieldGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		625EEEC01F499A0400E9905C /* FieldGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGuardTests.swift; sourceTree = "<group>"; };
 		625EEEC21F499A0400E9905C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62D79B8F1F53230C001EAC88 /* TextFieldDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDescriptor.swift; sourceTree = "<group>"; };
+		62D79B951F5323F8001EAC88 /* FieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
+		62D79B971F532408001EAC88 /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
+		62D79B991F53241E001EAC88 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		62D79B9D1F5334F0001EAC88 /* ValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
+		62D79B9F1F533D67001EAC88 /* RuleMakers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleMakers.swift; sourceTree = "<group>"; };
+		62D79BA11F5347E3001EAC88 /* StringFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
+		62D79BA21F5347E3001EAC88 /* StringMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMask.swift; sourceTree = "<group>"; };
+		62D79BA51F534A42001EAC88 /* String+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +91,10 @@
 			children = (
 				625EEEB51F499A0400E9905C /* FieldGuard.h */,
 				625EEEB61F499A0400E9905C /* Info.plist */,
+				62D79B931F5323B1001EAC88 /* Common */,
+				62D79B941F5323E2001EAC88 /* Contracts */,
+				62D79B9F1F533D67001EAC88 /* RuleMakers.swift */,
+				62D79B8F1F53230C001EAC88 /* TextFieldDescriptor.swift */,
 			);
 			path = FieldGuard;
 			sourceTree = "<group>";
@@ -84,6 +106,27 @@
 				625EEEC21F499A0400E9905C /* Info.plist */,
 			);
 			path = FieldGuardTests;
+			sourceTree = "<group>";
+		};
+		62D79B931F5323B1001EAC88 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				62D79BA51F534A42001EAC88 /* String+Helpers.swift */,
+				62D79BA11F5347E3001EAC88 /* StringFormatter.swift */,
+				62D79BA21F5347E3001EAC88 /* StringMask.swift */,
+				62D79B991F53241E001EAC88 /* Errors.swift */,
+				62D79B9D1F5334F0001EAC88 /* ValidationResult.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		62D79B941F5323E2001EAC88 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				62D79B971F532408001EAC88 /* ValidationRule.swift */,
+				62D79B951F5323F8001EAC88 /* FieldValidator.swift */,
+			);
+			path = Contracts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +192,7 @@
 					625EEEB11F499A0400E9905C = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = R6D3RTDSCX;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					625EEEBA1F499A0400E9905C = {
@@ -198,6 +242,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D79B901F53230C001EAC88 /* TextFieldDescriptor.swift in Sources */,
+				62D79BA31F5347E3001EAC88 /* StringFormatter.swift in Sources */,
+				62D79B961F5323F8001EAC88 /* FieldValidator.swift in Sources */,
+				62D79B981F532408001EAC88 /* ValidationRule.swift in Sources */,
+				62D79B9A1F53241E001EAC88 /* Errors.swift in Sources */,
+				62D79BA61F534A42001EAC88 /* String+Helpers.swift in Sources */,
+				62D79BA01F533D67001EAC88 /* RuleMakers.swift in Sources */,
+				62D79BA41F5347E3001EAC88 /* StringMask.swift in Sources */,
+				62D79B9E1F5334F0001EAC88 /* ValidationResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +377,7 @@
 		625EEEC71F499A0400E9905C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R6D3RTDSCX;
@@ -336,6 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.gk.FieldGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +398,7 @@
 		625EEEC81F499A0400E9905C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R6D3RTDSCX;
@@ -362,6 +418,7 @@
 		625EEECA1F499A0400E9905C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R6D3RTDSCX;
 				INFOPLIST_FILE = FieldGuardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +431,7 @@
 		625EEECB1F499A0400E9905C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R6D3RTDSCX;
 				INFOPLIST_FILE = FieldGuardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -402,6 +460,7 @@
 				625EEEC81F499A0400E9905C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		625EEEC91F499A0400E9905C /* Build configuration list for PBXNativeTarget "FieldGuardTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +469,7 @@
 				625EEECB1F499A0400E9905C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
