@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol AnyValidationRuleMaker {
-    var rules: [AnyValidationRule] { get set }
+    var rules: [AnyFieldValidationRule] { get set }
 }
 
 public protocol MinLengthRuleSetter {
@@ -31,7 +31,7 @@ public protocol AllowedCharacterSetter {
 }
 
 public protocol CustomRuleSetter {
-    func use(_ rule: AnyValidationRule)
+    func use(_ rule: AnyFieldValidationRule)
 }
 
 // MARK: - Impl
@@ -55,7 +55,7 @@ public extension EmailRuleSetter where Self: AnyValidationRuleMaker {
 }
 
 public extension CustomRuleSetter where Self: AnyValidationRuleMaker {
-    func use(_ rule: AnyValidationRule) {
+    func use(_ rule: AnyFieldValidationRule) {
         // TODO: Implement
     }
 }

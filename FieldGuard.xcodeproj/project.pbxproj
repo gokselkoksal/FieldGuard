@@ -10,8 +10,12 @@
 		625EEEBC1F499A0400E9905C /* FieldGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625EEEB21F499A0400E9905C /* FieldGuard.framework */; };
 		625EEEC11F499A0400E9905C /* FieldGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625EEEC01F499A0400E9905C /* FieldGuardTests.swift */; };
 		625EEEC31F499A0400E9905C /* FieldGuard.h in Headers */ = {isa = PBXBuildFile; fileRef = 625EEEB51F499A0400E9905C /* FieldGuard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62D029421F5DED73009F564A /* ObserverRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D029411F5DED73009F564A /* ObserverRegistry.swift */; };
+		62D029441F5DEE6E009F564A /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D029431F5DEE6E009F564A /* FieldValidator.swift */; };
+		62D029461F5DEF58009F564A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D029451F5DEF58009F564A /* Test.swift */; };
+		62D029481F5DEF91009F564A /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D029471F5DEF91009F564A /* FormValidator.swift */; };
+		62D0294B1F5E0183009F564A /* UITextFieldHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0294A1F5E0183009F564A /* UITextFieldHandler.swift */; };
 		62D79B901F53230C001EAC88 /* TextFieldDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B8F1F53230C001EAC88 /* TextFieldDescriptor.swift */; };
-		62D79B961F5323F8001EAC88 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B951F5323F8001EAC88 /* FieldValidator.swift */; };
 		62D79B981F532408001EAC88 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B971F532408001EAC88 /* ValidationRule.swift */; };
 		62D79B9A1F53241E001EAC88 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B991F53241E001EAC88 /* Errors.swift */; };
 		62D79B9E1F5334F0001EAC88 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D79B9D1F5334F0001EAC88 /* ValidationResult.swift */; };
@@ -38,8 +42,12 @@
 		625EEEBB1F499A0400E9905C /* FieldGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		625EEEC01F499A0400E9905C /* FieldGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGuardTests.swift; sourceTree = "<group>"; };
 		625EEEC21F499A0400E9905C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62D029411F5DED73009F564A /* ObserverRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverRegistry.swift; sourceTree = "<group>"; };
+		62D029431F5DEE6E009F564A /* FieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
+		62D029451F5DEF58009F564A /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		62D029471F5DEF91009F564A /* FormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
+		62D0294A1F5E0183009F564A /* UITextFieldHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldHandler.swift; sourceTree = "<group>"; };
 		62D79B8F1F53230C001EAC88 /* TextFieldDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDescriptor.swift; sourceTree = "<group>"; };
-		62D79B951F5323F8001EAC88 /* FieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		62D79B971F532408001EAC88 /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
 		62D79B991F53241E001EAC88 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		62D79B9D1F5334F0001EAC88 /* ValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
@@ -93,8 +101,12 @@
 				625EEEB61F499A0400E9905C /* Info.plist */,
 				62D79B931F5323B1001EAC88 /* Common */,
 				62D79B941F5323E2001EAC88 /* Contracts */,
+				62D029491F5E0035009F564A /* UI */,
 				62D79B9F1F533D67001EAC88 /* RuleMakers.swift */,
 				62D79B8F1F53230C001EAC88 /* TextFieldDescriptor.swift */,
+				62D029431F5DEE6E009F564A /* FieldValidator.swift */,
+				62D029471F5DEF91009F564A /* FormValidator.swift */,
+				62D029451F5DEF58009F564A /* Test.swift */,
 			);
 			path = FieldGuard;
 			sourceTree = "<group>";
@@ -108,6 +120,14 @@
 			path = FieldGuardTests;
 			sourceTree = "<group>";
 		};
+		62D029491F5E0035009F564A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62D0294A1F5E0183009F564A /* UITextFieldHandler.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		62D79B931F5323B1001EAC88 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +136,7 @@
 				62D79BA21F5347E3001EAC88 /* StringMask.swift */,
 				62D79B991F53241E001EAC88 /* Errors.swift */,
 				62D79B9D1F5334F0001EAC88 /* ValidationResult.swift */,
+				62D029411F5DED73009F564A /* ObserverRegistry.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -124,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				62D79B971F532408001EAC88 /* ValidationRule.swift */,
-				62D79B951F5323F8001EAC88 /* FieldValidator.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -242,14 +262,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D029481F5DEF91009F564A /* FormValidator.swift in Sources */,
+				62D029421F5DED73009F564A /* ObserverRegistry.swift in Sources */,
 				62D79B901F53230C001EAC88 /* TextFieldDescriptor.swift in Sources */,
 				62D79BA31F5347E3001EAC88 /* StringFormatter.swift in Sources */,
-				62D79B961F5323F8001EAC88 /* FieldValidator.swift in Sources */,
 				62D79B981F532408001EAC88 /* ValidationRule.swift in Sources */,
 				62D79B9A1F53241E001EAC88 /* Errors.swift in Sources */,
+				62D029461F5DEF58009F564A /* Test.swift in Sources */,
 				62D79BA61F534A42001EAC88 /* String+Helpers.swift in Sources */,
 				62D79BA01F533D67001EAC88 /* RuleMakers.swift in Sources */,
 				62D79BA41F5347E3001EAC88 /* StringMask.swift in Sources */,
+				62D029441F5DEE6E009F564A /* FieldValidator.swift in Sources */,
+				62D0294B1F5E0183009F564A /* UITextFieldHandler.swift in Sources */,
 				62D79B9E1F5334F0001EAC88 /* ValidationResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

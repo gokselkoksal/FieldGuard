@@ -8,21 +8,26 @@
 
 import Foundation
 
-public protocol AnyValidationRule {
-    var error: Error { get }
-    func _validate(_ value: Any) -> ValidationResult
+public protocol FormValidationRule {
+    var error: Error { get set }
+    func validate() -> ValidationResult
 }
 
-public protocol ValidationRule: AnyValidationRule {
+public protocol AnyFieldValidationRule {
+    var error: Error { get set }
+    func _validate(_ value: Any?) -> ValidationResult
+}
+
+public protocol FieldValidationRule: AnyFieldValidationRule {
     associatedtype Value
-    func validate(_ value: Value) -> ValidationResult
+    func validate(_ value: Value?) -> ValidationResult
 }
 
 // MARK: -
 
-public extension ValidationRule {
-    func _validate(_ value: Any) -> ValidationResult {
-        guard let value = value as? Value else {
+public extension FieldValidationRule {
+    func _validate(_ value: Any?) -> ValidationResult {
+        guard let value = value as? Value? else {
             return ValidationResult.invalid([FieldGuardError.valueTypeMismatch])
         }
         return validate(value)
