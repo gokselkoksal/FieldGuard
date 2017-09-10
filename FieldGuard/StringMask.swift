@@ -8,10 +8,6 @@
 
 import Foundation
 
-public protocol StringMaskProtocol {
-    func mask(_ string: String) -> String
-}
-
 public class StringMask: StringMaskProtocol {
     
     public let ranges: [NSRange]
@@ -40,34 +36,5 @@ public class StringMask: StringMaskProtocol {
             index = string.index(after: index)
         }
         return result
-    }
-}
-
-public struct StringMaskStorage {
-    
-    public var mask: StringMaskProtocol {
-        didSet {
-            update()
-        }
-    }
-    
-    public var original: String? {
-        didSet {
-            update()
-        }
-    }
-    
-    public private(set) var masked: String?
-    
-    public init(mask: StringMaskProtocol) {
-        self.mask = mask
-    }
-    
-    private mutating func update() {
-        if let original = original {
-            masked = mask.mask(original)
-        } else {
-            masked = nil
-        }
     }
 }

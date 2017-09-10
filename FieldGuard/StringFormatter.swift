@@ -8,19 +8,23 @@
 
 import Foundation
 
-public protocol StringFormatterProtocol {
-    func format(_ value: String) -> String
-    func unformat(_ value: String) -> String
-}
-
 public class StringFormatter: StringFormatterProtocol {
     
     public let pattern: String
     public let valueCharacter: Character
+    public let formatCharacterIndexes: IndexSet
     
     public init(pattern: String, valueCharacter: Character = "#") {
         self.pattern = pattern
         self.valueCharacter = valueCharacter
+        
+        var formatCharacterIndexes = IndexSet()
+        for (index, char) in pattern.characters.enumerated() {
+            if char != valueCharacter {
+                formatCharacterIndexes.insert(index)
+            }
+        }
+        self.formatCharacterIndexes = formatCharacterIndexes
     }
     
     public func format(_ value: String) -> String {

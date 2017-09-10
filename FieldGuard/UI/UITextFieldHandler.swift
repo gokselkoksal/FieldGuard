@@ -11,7 +11,7 @@ import UIKit
 
 // TODO: In progress
 
-public class UITextFieldHandler {
+public class UITextFieldHandler: NSObject {
     
     public let field: UITextField
     
@@ -21,49 +21,48 @@ public class UITextFieldHandler {
                 inputAcceptanceRules: fieldDescriptor.inputAcceptanceRules,
                 validationRules: fieldDescriptor.validationRules
             )
-            if let stringMask = fieldDescriptor.stringMask {
-                self.stringMaskStorage = StringMaskStorage(mask: stringMask)
-            }
+            self.textProcessor.formatter = fieldDescriptor.stringFormatter
+            self.textProcessor.mask = fieldDescriptor.stringMask
         }
     }
     
-    private(set) var validator: FieldValidator
+    public fileprivate(set) var validator: FieldValidator
     
-    private var previousValue: String? = nil
-    
-    private var stringMaskStorage: StringMaskStorage?
-    
-    private var stringFormatter: StringFormatterProtocol? {
-        return fieldDescriptor.stringFormatter
-    }
+    fileprivate let textProcessor: TextProcessor
     
     init(field: UITextField, fieldDescriptor: TextFieldDescriptor) {
         self.field = field
         self.fieldDescriptor = fieldDescriptor
+        
+        self.textProcessor = TextProcessor(
+            formatter: fieldDescriptor.stringFormatter,
+            mask: fieldDescriptor.stringMask
+        )
         
         self.validator = FieldValidator(
             inputAcceptanceRules: fieldDescriptor.inputAcceptanceRules,
             validationRules: fieldDescriptor.validationRules
         )
         
-        if let stringMask = fieldDescriptor.stringMask {
-            self.stringMaskStorage = StringMaskStorage(mask: stringMask)
+        super.init()
+        self.field.delegate = self
+    }
+}
+
+extension UITextFieldHandler: UITextFieldDelegate {
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard textField.text == textProcessor.value?.formatted else {
+            return false
         }
         
-        self.previousValue = self.field.text
-        self.field.addTarget(self, action: #selector(valueChanged), for: .editingChanged)
-    }
-    
-    @objc func valueChanged() {
-        let nextValue: String?
-        if let newValue = self.field.text {
-            let unformatted = self.stringFormatter?.unformat(newValue)
-            self.stringMaskStorage?.original = unformatted
-            let formatted = self.stringMaskStorage?.masked
-            nextValue = formatted
-        } else {
-            nextValue = nil
+        do {
+            textProcessor.changeCharacters(in: range, with: string)
+            try validator.setValue(textProcessor.value?.raw)
+            return true
+        } catch {
+            textProcessor.revert()
+            return false
         }
-        self.field.text = nextValue
     }
 }
