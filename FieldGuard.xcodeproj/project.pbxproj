@@ -13,6 +13,7 @@
 		627B844B1F61F38D00817867 /* TextProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627B844A1F61F38D00817867 /* TextProcessorTests.swift */; };
 		629DA0B31F6ED313000D553E /* StringFormatterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629DA0B21F6ED313000D553E /* StringFormatterProtocol.swift */; };
 		629DA0B51F6ED31B000D553E /* StringMaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629DA0B41F6ED31B000D553E /* StringMaskProtocol.swift */; };
+		629DA0B71F6EDF2F000D553E /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629DA0B61F6EDF2F000D553E /* Optional+Unwrap.swift */; };
 		62D029421F5DED73009F564A /* ObserverRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D029411F5DED73009F564A /* ObserverRegistry.swift */; };
 		62D029441F5DEE6E009F564A /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D029431F5DEE6E009F564A /* FieldValidator.swift */; };
 		62D029461F5DEF58009F564A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D029451F5DEF58009F564A /* Test.swift */; };
@@ -48,6 +49,7 @@
 		627B844A1F61F38D00817867 /* TextProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextProcessorTests.swift; sourceTree = "<group>"; };
 		629DA0B21F6ED313000D553E /* StringFormatterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringFormatterProtocol.swift; sourceTree = "<group>"; };
 		629DA0B41F6ED31B000D553E /* StringMaskProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMaskProtocol.swift; sourceTree = "<group>"; };
+		629DA0B61F6EDF2F000D553E /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		62D029411F5DED73009F564A /* ObserverRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverRegistry.swift; sourceTree = "<group>"; };
 		62D029431F5DEE6E009F564A /* FieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		62D029451F5DEF58009F564A /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				62D79B991F53241E001EAC88 /* Errors.swift */,
 				62D79B9D1F5334F0001EAC88 /* ValidationResult.swift */,
 				62D029411F5DED73009F564A /* ObserverRegistry.swift */,
+				629DA0B61F6EDF2F000D553E /* Optional+Unwrap.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				629DA0B31F6ED313000D553E /* StringFormatterProtocol.swift in Sources */,
 				62D029421F5DED73009F564A /* ObserverRegistry.swift in Sources */,
 				62D79B901F53230C001EAC88 /* TextFieldDescriptor.swift in Sources */,
+				629DA0B71F6EDF2F000D553E /* Optional+Unwrap.swift in Sources */,
 				62D79BA31F5347E3001EAC88 /* StringFormatter.swift in Sources */,
 				62D79B981F532408001EAC88 /* ValidationRule.swift in Sources */,
 				62D79B9A1F53241E001EAC88 /* Errors.swift in Sources */,

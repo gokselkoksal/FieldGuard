@@ -10,23 +10,11 @@ import Foundation
 
 class TextProcessor {
     
-    struct TextValue: Equatable, CustomStringConvertible {
-        
+    struct TextValue {
         let raw: String
         let masked: String
         let formatted: String
         let maskedFormatted: String
-        
-        static func ==(a: TextValue, b: TextValue) -> Bool {
-            return a.raw == b.raw &&
-                a.masked == b.masked &&
-                a.formatted == b.formatted &&
-                a.maskedFormatted == b.maskedFormatted
-        }
-        
-        var description: String {
-            return "\(raw) | \(masked) | \(formatted) | \(maskedFormatted)"
-        }
     }
     
     var mask: StringMaskProtocol?
@@ -78,5 +66,24 @@ class TextProcessor {
         let formatted = formatter?.format(raw) ?? raw
         let maskedFormatted = formatter?.format(masked) ?? masked
         return TextValue(raw: raw, masked: masked, formatted: formatted, maskedFormatted: maskedFormatted)
+    }
+}
+
+// MARK: - Helpers
+
+extension TextProcessor.TextValue: Equatable {
+    
+    static func ==(a: TextProcessor.TextValue, b: TextProcessor.TextValue) -> Bool {
+        return a.raw == b.raw &&
+            a.masked == b.masked &&
+            a.formatted == b.formatted &&
+            a.maskedFormatted == b.maskedFormatted
+    }
+}
+
+extension TextProcessor.TextValue: CustomStringConvertible {
+    
+    var description: String {
+        return "\(raw) | \(masked) | \(formatted) | \(maskedFormatted)"
     }
 }

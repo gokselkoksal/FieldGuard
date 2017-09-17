@@ -19,10 +19,10 @@ class TextProcessorTests: XCTestCase {
         super.setUp()
         mask = StringMask(ranges: [NSRange(location: 0, length: 7)])
         formatter = StringFormatter(pattern: "# (###) ### ## ##")
-        p = TextProcessor(mask: mask, formatter: formatter)
+        p = TextProcessor(formatter: formatter, mask: mask)
     }
     
-    func testTyping() {
+    func testTyping() throws {
         typealias TestCase = (input: String, expected: TextProcessor.TextValue)
         
         let testCases: [TestCase] = [
@@ -43,8 +43,9 @@ class TextProcessorTests: XCTestCase {
             let index = p.value?.formatted.characters.count ?? 0
             let range = NSRange(location: index, length: 0)
             p.changeCharacters(in: range, with: testCase.input)
-            XCTAssertEqual(p.value!, testCase.expected)
-            print("Comparing: \n--\n\(p.value!)\n--\n\(testCase.expected)\n----")
+            let value = try p.value.unwrap()
+            XCTAssertEqual(value, testCase.expected)
+            print("Comparing: \n--\n\(value)\n--\n\(testCase.expected)\n----")
         }
     }
     
